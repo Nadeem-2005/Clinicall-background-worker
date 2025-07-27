@@ -9,10 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "bullmq": "^5.56.8",
     "dotenv": "^17.2.1",
     "nodemailer": "^7.0.5"
-  }
+  },
+  "type": "module"
 }
