@@ -17,11 +17,14 @@ console.log('REDIS_URL:', process.env.REDIS_URL ? 'Loaded' : 'Missing');
 // Redis connection configuration for production using Upstash
 const redisUrl = process.env.REDIS_URL;
 const redisConfig = redisUrl
-  ? { url: redisUrl }
+  ? { url: redisUrl,
+    enableAutoPipelining: true,
+  }
   : {
       host: process.env.REDIS_HOST || "localhost",
       port: parseInt(process.env.REDIS_PORT || "6379"),
       password: process.env.REDIS_PASSWORD,
+      enableAutoPipelining: true,
     };
 console.log('Using Redis URL:', redisConfig);
 // Email transporter configuration
